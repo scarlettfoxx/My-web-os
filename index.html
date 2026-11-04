@@ -12,17 +12,40 @@
         color: white;
         }
 
+    .desktop {
+      padding: 40px 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      }
+
+      .icon {
+        width: 85px;
+        text-align: center;
+        cursor: pointer;
+        }
+
+      .icon-box {
+        width: 55px;
+        height: 55px;
+        border-radius: 12px;
+        margin: 0 auto 8px;
+        }
+
+      .icon span {
+        font-size: 13px;
+        }
+
       .taskbar {
         position: fixed;
         bottom: 0;
         left: 0;
         width: 100%;
         height: 50px;
-        background-color: rgba(0, 0, 0, 0.65);
+        background-color: rgba(0, 0, 0, 0.7);
         display: flex;
         align-items: center;
-        padding: 0 15px;
-        box-sizing: border-box;
+        padding-left: 12px;
         }
 
       .start-btn {
@@ -32,6 +55,7 @@
         padding: 8px 16px;
         border-radius: 6px;
         cursor: pointer;
+        font-size: 14px;
         font-weight: bold;
         }
 
@@ -39,46 +63,29 @@
         background-color: #0d9488;
         }
 
-      .desktop {
-        padding: 30px;
-        dispay: flex;
-        flex-wrap: wrap;
-        gap: 25px;
-        }
-
-      .icon {
-        width: 80px;
-        text-align: center;
-        cursor: pointer;
-        }
-      .icon div {
-        width: 50px;
-        height: 50px;
-        border-radius 10px;
-        margin: 0 uto 8px;
-        }
-
-      .icon span {
-        font-size: 13px;
-        }
+     .clock {
+       margin-left: auto;
+       margin-right: 20px;
+       font-size: 14px;
+       }
     </style>
   </head>
   <body>
 
     <div class="desktop">
-      <div lass="icon">
-        <div style="background:#14b8a6;"></div>
+      <div class="icon">
+        <div class="icon-box" style="background-color: #14b8a6;"></div>
         <span>Computer</span>
       </div>
 
       <div class="icon">
-        <div style="background:#10b981;"></div>
+        <div class="icon-box" style="background-color: #10b981;></div>
         <span>Files</span>
       </div>
 
       <div class="icon">
-        <div style="background:#2dd4bf;"></div>
-        <span>Settings</span>
+        <div class="icon-box" style="background-color: #2dd4bf;"></div>
+        <span>Browser</span>
       </div>
     </div>
 
