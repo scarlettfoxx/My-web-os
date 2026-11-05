@@ -85,13 +85,30 @@
 
       <div class="icon">
         <div class="icon-box" style="background-color: #2dd4bf;"></div>
-        <span>Browser</span>
+        <span>Browser</}{span>
       </div>
     </div>
 
     <div class="taskbar">
       <button class="start-btn">Start</button>
+      <div class="clock" id="clock">00:00</div>
     </div>
-    
+
+      <script>
+        function updateClock() {
+          const now = new Date();
+          let hours = now.getHours();
+          let minutes = now.getMinutes();
+
+          if (minutes < 10) {
+            minutes = "0" + minutes;
+            }
+
+          document.getElementById("clock).
+    }
+
+        updateClock();
+        setInterval(updateClock, 1000);
+      </script>
   </body>
 </html>
