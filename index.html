@@ -111,27 +111,65 @@ font-size: 14px;
 <body>
 
 <div class="desktop">
-<div class="icon">
-<img class="icon-box" src="computer.jpeg" alt="computer">
-<span>Computer</span>
-</div>
-
-<div class="icon">
+<div class="icon" onlcick="openWindow('filesWindow')">
 <img class="icon-box" src="files.png" alt="Files">
 <span>Files</span>
 </div>
 
-<div class="icon">
+<div class="icon"> onclick="openWindow('browserWindow')">
 <img class="icon-box" src="browser.png" alt="Browser">
 <span>Browser</span>
 </div>
 
-<div class="icon">
+<div class="icon"> onclick="openWindow('settingsWindow')">
 <img class="icon-box" src="settings.jpeg" alt="Settings">
 <span>Settings</span>
 </div>
 </div>
 
+  <div class="window" id="filesWindow">
+    <div class="window-header">
+      <span>Files</span>
+  <button class="close-btn" onclick="CloseWindow('filesWindow')"></button>
+    </div>
+
+    <div class="window-body">
+        <p>Recent</p>
+        <p>Documents</p>
+        <p>Downloads</p>
+        <p>Pictures</p>
+        <p>Music</p>
+    </div>
+  </div>
+
+  <div class="Window" id="browserWindow">
+    <div class="Window-header">
+      <span>Browser</span>
+      <button class="close-btn" onclick="closeWindow('browserWindow')></button>
+       </div>
+        <div class="window-body">
+        <p><i>Search the <i>web</i></p>
+        <input type="text" placeholders="Type something..." style="width: 90%; padding: 8px; margin-top; 10px; border-radius: 6px; border: none;">
+    </div>
+  </div>
+
+  <div class="window" id="settinsWindow">
+    <div class="window-header">
+      <span>Settings</span>
+      <button class="close-btn" onclick="closeWindow('settingsWindow')"></button>
+    </div>
+    <div class="window-body">
+      <p>What can I help you with today?</p>
+      <p style="margin-top: 15px;"> Display</p>
+      <ul>
+        <p>Sound</p>
+        <p>Wallpaper</p>
+        <p>About</p>
+      </ul>
+    </div>
+  </div>
+
+  
 <div class="taskbar">
 <button class="start-btn">Start</button>
 <div class="clock" id="clock">00:00</div>
@@ -152,7 +190,17 @@ document.getElementById("clock").textContent = hours + ":" + minutes;
 
 updateClock();
 setInterval(updateClock, 1000);
+
+  function openWindow(id) {
+    document.getElementbyId(id).style.display = "block";
+    }
+  
+  function closeWindow(id) {
+    document.getElementbyId(id).style.display = "none";
+    }
+    
 </script>
 
 </body>
 </html>
+
