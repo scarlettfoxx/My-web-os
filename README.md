@@ -1,7 +1,7 @@
 # My-web-os
 A simple web-based operating system made with HTML, CSS, and JavaScript.
 ## About
-This is a fake desktop that runs in the browser.It has icons, a clock, and a few working apps.
+This is a fake desktop that runs in the browser. It has icons, a clock, and a few working apps.
 ## Features
 -Desktop with icons
 -Working clock
