@@ -19,6 +19,12 @@ This is a fake desktop that runs in the browser. It has icons, a clock, and a fe
 2. Click the x button to close any window
 3. Use the calculator for basic math
 
+## Reason
+I am doing this project for the terra hack club challenge.
+
+## Things to know
+I sincerely apologize for taking a lot of time with this project. I promise next time I'll work faster. I'm a beginner and this is my first web OS. I'll do better next time.
+
 ## Built with
 -HTML
 -CSS
