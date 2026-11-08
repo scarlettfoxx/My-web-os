@@ -27,11 +27,13 @@ text-align: center;
   cursor: pointer;
 }
 
-.icon-box {
+.icon img {
 width: 70px;
 height: 70px;
 border-radius: 14px;
 margin: 0 auto 8px;
+  display: block;
+  object-fit: cover;
 }
 
 .icon span {
@@ -106,6 +108,44 @@ font-size: 14px;
     font-size: 18px;
     cursor: pointer;
     }
+
+  #calcDisplay {
+    width: 100%;
+    height: 50px;
+    font-size: 24px;
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: #0f2a2a;
+    color: white;
+    box-sizing: border-box;
+    }
+
+  .calc-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    }
+.calc-buttons button {
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  background-color: #134e4a;
+  color: white;
+  cursor: pointer;
+  }
+
+  .calc-buttons button:hover {
+    background-color: #0d9488;
+    }
+
+  .calc-buttons .equals {
+    background-color: #14b8a6;
+    grid-column: span 2;
+    }
 </style>
 </head>
 <body>
@@ -124,6 +164,11 @@ font-size: 14px;
 <div class="icon"> onclick="openWindow('settingsWindow')">
 <img class="icon-box" src="settings.jpeg" alt="Settings">
 <span>Settings</span>
+</div>
+
+  <div class="icon" onclick="openWindow('calcWindow')">
+    <img src="calculator.png" alt="Calculator">
+    <span>Calculator</span>
 </div>
 </div>
 
@@ -168,7 +213,38 @@ font-size: 14px;
       </ul>
     </div>
   </div>
+<div class="window id="calcWindow">
+  <div class="window-header">
+    <span>Calculater</span>
+    <button class="close-btn" onclick="closeWindow('calcWindow')"></button>
+  </div>
+<div class="window-body">
+  <input type="text" id="calcDisplay" displayed>
+  <div class="calc-buttons">
+    <button onclick="appendCalc('7')">7</button>
+    <button onclick="appendCalc('8')">8</button>
+    <button onlick="appendCalc('9')">9</button>
+    <button onclick="appenCalc('/')">/</button>
 
+    <button onclick="appendCalc('4')">4</button>
+    <button onclick="appendCalc('5')">5</button>
+    <button onclick="appendCalc('6')">6</button>
+    <button onclick="appendCalc('*')">*</button>
+
+    <button onclick="appendCalc('1')">1</button>
+    <button onclick="appendCalc('2')">2</button>
+    <button onclick="appendCalc('3')">3</button>
+    <button onclick="appendCalc('-')">-</button>
+
+    <button onclick="appendCalc('0')">0</button>
+    <button onclick="appendCalc('.')">.</button>
+    <button onclick="appendCalc('+')">+</button>
+    <button onclick="clearCalc()">C</button>
+
+    <button class="equals" onclick="calculate()">=</button>
+  </div>
+</div>
+</div>
   
 <div class="taskbar">
 <button class="start-btn">Start</button>
@@ -198,7 +274,23 @@ setInterval(updateClock, 1000);
   function closeWindow(id) {
     document.getElementbyId(id).style.display = "none";
     }
-    
+
+  function appendCalc(value) {
+    document.getElementById("calcDisplay").value += value;
+    }
+
+  function clearCalc() {
+    document.getElementById("calcDisplay").value = "";
+    }{
+
+  function calculate() {
+    try {
+      const result = eval(document.getElementbyId("calcDisplay").value);
+      document.getElementById("calcDisplay").value = result;
+      } catch (e) {
+      document.getElementById("calcDisplay").value = "Error";
+      }
+    }
 </script>
 
 </body>
